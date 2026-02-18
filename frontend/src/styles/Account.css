@@ -1,0 +1,259 @@
+/* ===============================
+   ACCOUNT PAGE – MODERN STYLE
+=============================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.account-container {
+  max-width: 520px;
+  margin: 60px auto;
+  padding: 40px 35px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+/* Subtle animated gradient background */
+body {
+  background: linear-gradient(120deg, #f4f9ff, #ffffff, #e8f2ff);
+  background-size: 200% 200%;
+  animation: bgMove 14s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Entry animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.account-container h1 { 
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 2rem;
+  font-weight: 700;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Labels */
+.account-container form label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  letter-spacing: 0.3px;
+}
+
+/* Inputs */
+.account-container form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.account-container form input:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 3px rgba(30,144,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* Button */
+.account-container form button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid transparent; 
+  cursor: pointer;
+  font-size: 0.95rem; 
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+
+  background: linear-gradient(135deg, #007BFF, #1e90ff);
+  box-shadow: 0 8px 25px rgba(0,123,255,0.35);
+
+  transition: all 0.3s ease;
+}
+
+
+.account-container form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,123,255,0.45);
+}
+
+.account-container form button:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+   MODERN ALERT UI
+=============================== */
+
+.ui-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOverlay 0.3s ease;
+}
+
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ui-alert {
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  animation: popIn 0.25s ease-out;
+  position: relative;
+}
+
+.ui-alert p {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* Alert top accent */
+.ui-alert.success { border-top: 4px solid #1e90ff; }
+.ui-alert.error   { border-top: 4px solid #ff4d4d; }
+.ui-alert.warning { border-top: 4px solid #ff9800; }
+.ui-alert.info    { border-top: 4px solid #007BFF; }
+.ui-alert.confirm { border-top: 4px solid #111; }
+
+.ui-alert-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.ui-alert .btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.ui-alert .btn.ok,
+.ui-alert .btn.confirm {
+  background: linear-gradient(135deg, #007BFF, #1e90ff);
+  color: white;
+}
+
+.ui-alert .btn.ok:hover,
+.ui-alert .btn.confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,123,255,0.4);
+}
+
+.ui-alert .btn.cancel {
+  background: #e0e0e0;
+}
+
+.ui-alert .btn.cancel:hover {
+  background: #d5d5d5;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .account-container {
+    max-width: 600px;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    max-width: 92%;
+    padding: 30px 25px;
+  }
+
+  .account-container h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .account-container {
+    padding: 25px 20px;
+  }
+
+  .account-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .account-container form input {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .account-container {
+    padding: 20px 15px;
+  }
+
+  .account-container h1 {
+    font-size: 1.25rem;
+  }
+}

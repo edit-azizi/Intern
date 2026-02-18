@@ -1,0 +1,297 @@
+.payment-page {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 24px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 12px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border: 1px solid #e0e0e0;
+}
+
+.payment-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.payment-page .order-summary {
+  background: #f8faff;
+  padding: 15px 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #1a1a1a;
+  border: 1px solid #cfd8e3;
+}
+
+.payment-page .order-summary p {
+  margin: 6px 0;
+}
+
+.payment-page label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.method-box label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+
+.payment-section label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+
+.payment-page input,
+.payment-page select,
+.payment-page textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8e3;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.payment-page input:focus,
+.payment-page select:focus,
+.payment-page textarea:focus {
+  border-color: #1969e1;
+  outline: none;
+  box-shadow: 0 0 6px rgba(25, 105, 225, 0.25);
+}
+
+.payment-page .method-buttons {
+  margin-bottom: 12px;
+  background: #f5f8ff;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.payment-page .method-box,
+.payment-page .payment-section {
+  background: #f7faff;
+  border: 1px solid #cfd8e3;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+.payment-page .card-row {
+  display: flex;
+  gap: 14px;
+}
+
+.payment-page .card-row > div {
+  flex: 1;
+}
+
+.payment-page .payment-textarea {
+  resize: none;
+  height: 80px;
+  padding: 10px;
+}
+
+.payment-page .pay-btn,
+.payment-page .apply-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payment-page .pay-btn {
+  background: #22e925;
+  color: #fff;
+}
+
+.payment-page .pay-btn:hover {
+  background: #2fcd27;
+}
+
+.payment-page .apply-btn {
+  background: #00aaff;
+  color: #fff;
+}
+
+.payment-page .apply-btn:hover {
+  background: #008fcc;
+}
+
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.alert-box {
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 14px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.25s ease-out;
+}
+
+.alert-box p {
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 22px;
+}
+
+.alert-box button {
+  background: #1969e1;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.alert-box button:hover {
+  background: #0f4dc4;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .payment-page {
+    max-width: 600px;
+    padding: 32px;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-page {
+    max-width: 90%;
+    padding: 24px;
+    margin: 30px auto;
+  }
+
+  .payment-page .card-row {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .payment-page {
+    max-width: 95%;
+    padding: 18px;
+    margin: 20px auto;
+  }
+
+  .payment-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .payment-page label {
+    font-size: 13px;
+  }
+
+  .payment-page input,
+  .payment-page select,
+  .payment-page textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .payment-page .pay-btn,
+  .payment-page .apply-btn {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .payment-page .card-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  .payment-page {
+    padding: 14px;
+    margin: 15px auto;
+  }
+
+  .payment-page h1 {
+    font-size: 1.3rem;
+  }
+
+  .payment-page .order-summary {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .payment-page input,
+  .payment-page select,
+  .payment-page textarea {
+    padding: 8px;
+  }
+
+  .payment-page .card-row {
+    flex-direction: column;
+  }
+}
+
+/* Smooth transition for hover effects */
+.payment-page input,
+.payment-page select,
+.payment-page textarea,
+.payment-page .method-box,
+.payment-page .payment-section,
+.payment-page .pay-btn,
+.payment-page .apply-btn {
+  transition: all 0.2s ease;
+}
+
+/* Focus ring for accessibility */
+.payment-page input:focus,
+.payment-page textarea:focus,
+.payment-page select:focus {
+  outline: 2px solid #1969e1;
+  outline-offset: 2px;
+}

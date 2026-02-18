@@ -1,0 +1,214 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* keep top alignment */
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating particles for subtle animation */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: floatParticles 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 35px 45px;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.login-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-box label {
+  font-size: 14px;
+  text-align: left;
+  color: white;
+}
+
+.login-box input {
+  padding: 12px 14px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  background: #f2f6ff;
+}
+
+.login-box input:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 8px rgba(30, 58, 138, 0.3);
+  background: #ffffff;
+}
+
+.login-box button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e3a8a, #4f46e5);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.login-box button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #3b3eda, #6366f1);
+}
+
+.login-box p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.login-box p a {
+  color: #3b6efb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatParticles {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(20px, -20px); }
+  100% { transform: translate(0,0); }
+}
+
+@media (min-width: 1200px) {
+  .login-container {
+    height: 80vh;
+  }
+
+  .login-box {
+    width: 380px;
+    padding: 45px 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    height: 85vh;
+    padding: 20px;
+  }
+
+  .login-box {
+    width: 330px;
+    padding: 35px 40px;
+  }
+
+  .login-box h2 {
+    font-size: 1.7rem;
+  }
+
+  .login-box input {
+    padding: 11px 12px;
+  }
+
+  .login-box button {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    height: 90vh;
+  }
+
+  .login-box {
+    width: 280px;
+    padding: 30px 30px;
+    border-radius: 12px;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-box input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .login-box button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .login-container {
+    height: 95vh;
+  }
+
+  .login-box {
+    width: 240px;
+    padding: 25px 20px;
+  }
+
+  .login-box h2 {
+    font-size: 1.35rem;
+  }
+
+  .login-box input {
+    font-size: 12px;
+  }
+
+  .login-box button {
+    font-size: 14px;
+    padding: 11px;
+  }
+}
+
