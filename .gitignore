@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Laravel
+/backend/vendor
+/backend/.env
+/backend/.env.*
+/backend/storage/*.key
+
+# React build
+/frontend/build
+/frontend/dist
+
+# OS
+.DS_Store
+Thumbs.db
