@@ -50,5 +50,24 @@ $stmt->bind_param(
 if ($stmt->execute()) {
     echo json_encode(["status" => "success"]);
 } else {
-    echo json_encode(["status" => "error", "message" => "Code already exists"]);
+
+    // Get real MySQL error
+    $error = $conn->error;
+
+    // If duplicate entry
+    if ($conn->errno === 1062) {
+        echo json_encode([
+            "status" => "error",
+            "message" => "This discount code already exists."
+        ]);
+    } else {
+        echo json_encode([
+            "status" => "error",
+            "message" => "Database error: " . $error
+        ]);
+    }
 }
+
+$stmt->close();
+$conn->close();
+exit;

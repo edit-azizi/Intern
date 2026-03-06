@@ -90,7 +90,7 @@ function DiscountDashboard({ user }) {
 
     try {
       const res = await api.post("/api/discounts/create.php", newDiscount);
-      if (res.data.status === "success") {
+      if (res.data && res.data.status === "success") {
         showAlert("Discount code created!", "success");
         setNewDiscount({
           code: "",
@@ -100,13 +100,14 @@ function DiscountDashboard({ user }) {
         });
         fetchDiscounts();
       } else {
-        showAlert(res.data.message, "error");
+        showAlert(res.data?.message || "Discount can not be created! Code already exists.", "error");
       }
-    } catch (err) {
-      console.error(err);
-      showAlert("Failed to create discount", "error");
-    }
-  };
+       } catch (err) {
+          console.error(err);
+          console.log(err.response?.data);
+          showAlert(err.response?.data?.message || "Failed to create discount", "error");
+        }
+     };
 
   // UPDATE DISCOUNT
   const handleUpdate = async (d) => {
@@ -172,7 +173,7 @@ function DiscountDashboard({ user }) {
               if (val > 100) val = 100;  
               setNewDiscount({ ...newDiscount, percentage: val });
             }}
-            style={{ width: "150px"}}
+            style={{ width: "170px"}}
             required
           />
 

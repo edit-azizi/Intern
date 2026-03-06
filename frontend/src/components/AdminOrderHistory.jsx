@@ -249,7 +249,7 @@ function AdminOrderHistory({ user }) {
         )}
 
         {stats.length === 0 && !loading && (
-          <p>No orders found for this period.</p>
+          <p style={{ color: "white" }}>No orders found for this period.</p>
         )}
 
       {totalPages > 1 && (

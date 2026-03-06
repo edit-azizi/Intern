@@ -31,7 +31,7 @@ $stmt->bind_param("ssi", $username, $email, $_SESSION['user']['id']);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
-    echo json_encode(["status" => "error", "message" => "Username or email already in use"]);
+    echo json_encode(["status" => "error", "message" => "Could not be updated. Username or email already in use! Please try again."]);
     exit;
 }
 

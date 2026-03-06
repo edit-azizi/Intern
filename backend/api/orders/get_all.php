@@ -55,9 +55,9 @@ while ($row = $res->fetch_assoc()) {
             "payment_method" => $row['payment_method'],
             "shipping_address" => $row['shipping_address'],
             "created_at" => $row['created_at'],
-            "total" => $row['total'], //  SEND FINAL TOTAL
+            "total" => $row['total'],
             "items" => [],
-            "raw_sum" => 0 // temporary for discount calculation
+            "raw_sum" => 0 
         ];
     }
 
@@ -78,7 +78,7 @@ while ($row = $res->fetch_assoc()) {
 }
 
 /*
-✅ APPLY DISCOUNT FACTOR
+APPLY DISCOUNT FACTOR
 This makes product subtotals match the FINAL order price
 WITHOUT changing your DB.
 */

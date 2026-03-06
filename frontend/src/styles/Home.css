@@ -30,9 +30,9 @@ body::after {
   opacity: 0.96;
 
   background-image:
-    url('../assets/tech-hex.jpg'),
-    url('../assets/floating-circuits.jpg'),
-    url('../assets/neon-grid.jpg');
+    url('../assets/tech-hex.jpg');
+    /* url('../assets/floating-circuits.jpg'), */
+    /* url('../assets/neon-grid.jpg'); */
 
   background-repeat: repeat, repeat, repeat;
   background-size: cover, cover, cover;

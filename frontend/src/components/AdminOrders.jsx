@@ -214,13 +214,13 @@ function AdminOrders({ user }) {
           <option value="shipped">Shipped</option>
         </select>
 
-        From: <input
+        <span style={{ color: "white" }}>From:</span> <input
           type="date"
           value={fromDate}
           onChange={(e) => setFromDate(e.target.value)}
         />
 
-        To: <input
+        <span style={{ color: "white" }}>To:</span> <input
           type="date"
           value={toDate}
           onChange={(e) => setToDate(e.target.value)}

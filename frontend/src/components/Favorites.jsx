@@ -182,7 +182,7 @@ const addToCart = async (product, qty = 1) => {
     <div className="products-container" ref={gridRef}>
       <h1>My Favorites</h1>
 
-      {products.length === 0 && <p>No favorites yet.</p>}
+      {products.length === 0 && <p style={{ color: "white" }}>No favorites yet.</p>}
 
       <div className="products-grid">
         {currentProducts.map((product) => (
