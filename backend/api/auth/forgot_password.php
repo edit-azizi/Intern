@@ -33,7 +33,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    // Important: don't reveal if email exists
     echo json_encode(["status" => "success"]);
     exit;
 }
